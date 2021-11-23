@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Poppins:wght@300;400;500&display=swap');
+@import "_nullstyle";
+@mixin text_style ($fz,
+$lh) {
+    font-size: $fz;
+    line-height: $lh;
+}
+
+
+/*----------------------------- Контейнер контента и страницы -----------------------------*/
+
+body {
+    font-family: Poppins;
+    font-size: 16px;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+
+/*-----------------------------  Общие стили -----------------------------*/
+
+
+/*------- Кнопка ---------*/
+
+.button {
+    @include text_style (14px,
+    166%);
+    padding: 16px 28px;
+    color: #fff;
+    text-align: center;
+    background-color: #E1651F;
+    border-radius: 39px;
+    font-weight: 400;
+    font-family: Poppins;
+}
+
+
+/*------- Заголовок --------*/
+
+.title {
+    margin: 0 auto;
+    color: #000;
+    text-align: center;
+    &__name {
+        @include text_style (48px,
+        90%);
+        font-family: 'Oleo Script Swash Caps';
+        margin-bottom: 18px;
+    }
+    &__text {
+        @include text_style (16px,
+        160%);
+        color: #6A6A6A;
+        max-width: 525px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0;
+            height: 2px;
+            background-color: #E1651F;
+            margin-bottom: -25px;
+        }
+    }
+}
+
+
+/*------- Звёзды --------*/
+
+.stars {
+    max-width: 150px;
+    display: flex;
+    // justify-content: center;
+    & img {
+        margin-right: 5.5px;
+        & img:last-child {
+            margin-right: 0px;
+        }
+    }
+}
+
+
+/*-----------------------------  Конец общих стилей -----------------------------*/
+
+
+/*----------------------------- Шапка + меню -----------------------------*/
+
+.header {
+    background: url(../img/header_bg.jpg) center no-repeat;
+    min-height: 100vh;
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        margin-right: 30px;
+    }
+    &__preview {
+        min-height: 100vh;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 720px;
+        margin-top: -152px;
+        padding-top: 100px;
+    }
+    &__title {
+        Font-family: 'Oleo Script Swash Caps';
+        font-size: 96px;
+        padding: 32px 0;
+    }
+    &__subtitle {
+        @include text_style (18px,
+        150%);
+        max-width: 520px;
+        margin: 0 auto;
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+    &__button {
+        align-self: center;
+    }
+}
+
+
+/*------------- Меню навигации -------------*/
+
+.menu {
+    &_list {
+        padding: 58px 0px;
+        display: flex;
+    }
+    &__item {
+        margin-right: 8px;
+        position: relative;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    &__link {
+        color: #fff;
+        font-weight: 200;
+        padding: 5px 8px;
+        &::after {
+            transition: all .2s ease-out 0s;
+            content: '';
+            position: absolute;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: #E1651F;
+            margin-bottom: -10px;
+        }
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+
+/*----------------------------- Секция About Us -----------------------------*/
+
+.about {
+    margin-top: 50px;
+    padding: 120px 0;
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    &__img {
+        max-width: 565px;
+        width: 100%;
+        & img {
+            width: 100%;
+            min-width: 457px;
+        }
+    }
+    &__info {
+        max-width: 480px;
+        margin-left: 30px;
+    }
+    &__title {
+        @include text_style (48px,
+        90%);
+        font-family: 'Oleo Script Swash Caps';
+        color: #000;
+        position: relative;
+        margin-bottom: 52px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: #E1651F;
+            margin-bottom: -25px;
+        }
+    }
+    &__text {
+        @include text_style (16px,
+        160%);
+        font-weight: 400;
+        color: #6A6A6A;
+        margin-bottom: 34px;
+    }
+}
+
+
+/*----------------------------- Секция Out Menu -----------------------------*/
+
+.shop {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 120px 0;
+    text-align: center;
+    &__area {
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 86px;
+    }
+    &__title {
+        padding-bottom: 100px;
+    }
+    &__container {
+        max-width: 1330px;
+    }
+    &__card {
+        margin: 0px 15px 30px 15px;
+        max-width: 277px;
+    }
+}
+
+.card {
+    &__stars {
+        margin-bottom: 12px;
+    }
+    &__info {
+        padding: 23.5px;
+        background-color: #fff;
+    }
+    &__img {
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__name {
+        @include text_style (24px,
+        100%);
+        font-family: 'Oleo Script Swash Caps';
+        color: #000;
+    }
+    &__price {
+        @include text_style (14px,
+        160%);
+        background-color: #E1651F;
+        padding: 2px 10px;
+    }
+    &__name-and-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__description {
+        @include text_style (14px,
+        160%);
+        color: #6A6A6A;
+        margin: 10px 0px;
+        text-overflow: ellipsis;
+        max-height: 67px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    &__button {
+        @include text_style (12px,
+        160%);
+        color: #E1651F;
+        padding: 4px 10px;
+        background-color: rgba(232, 107, 38, 0.08);
+        border-radius: 25px;
+    }
+}
+
+
+/*----------------------------- Секция Why to choose us? -----------------------------*/
+
+.weAre {
+    padding: 120px 0;
+    &__container {
+        max-width: 1250px;
+    }
+    &__area {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+    &__card {
+        max-width: 380px;
+        width: 100%;
+        text-align: center;
+        margin: 30px 15px;
+    }
+    &__img {
+        object-fit: cover;
+        max-width: 75px;
+    }
+    &__cardname {
+        @include text_style (24px,
+        100%);
+        color: #000;
+        font-family: 'Oleo Script Swash Caps';
+        margin: 25px 0px 12px 0px;
+    }
+    &__text {
+        @include text_style (16px,
+        160%);
+        color: #6A6A6A;
+    }
+}
+
+
+/*----------------------------- Секция Listen to our customers-----------------------------*/
+
+.customers {
+    padding: 120px 0;
+    background: url(../img/customers_bg.jpg) center no-repeat;
+    &__title {
+        & .title__name {
+            color: #fff;
+        }
+        & .title__text {
+            color: #fff;
+        }
+    }
+    &__area {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    &__card {
+        margin: 15px 15px;
+        padding: 60px 30px;
+        text-align: center;
+        min-width: 280px;
+        max-width: 380px;
+        background-color: #fff;
+    }
+    &__img {
+        margin-bottom: 30px;
+        & img {
+            max-width: 120px;
+            border-radius: 50%;
+        }
+    }
+    &__stars {
+        margin: 0 auto;
+        justify-content: center;
+    }
+    &__description {
+        @include text_style(16px,
+        160%);
+        color: #6A6A6A;
+        margin: 17px 0px;
+        font-weight: 400;
+    }
+    &__name {
+        @include text_style(24px,
+        100%);
+        font-family: 'Oleo Script Swash Caps';
+        color: #000;
+    }
+}
+
+
+/*----------------------------- Секция Book your table-----------------------------*/
+
+.booking {
+    padding: 120px 0;
+    &__form {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+    &__input {
+        width: 100%;
+        margin-bottom: 28px;
+        @include text_style(16px,
+        160%);
+        color: #00000066;
+        padding: 13px 24px;
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+    &__center-inputs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & input {
+            max-width: 432px;
+        }
+    }
+    &__description {
+        width: 100%;
+        height: 200px;
+        @include text_style(16px,
+        160%);
+        color: #00000066;
+        padding: 13px 24px;
+        background-color: rgba(0, 0, 0, 0.04);
+        resize: none;
+        margin-bottom: 44px;
+    }
+}
+
+
+/*----------------------------- Секция Number of About us-----------------------------*/
+
+.whyChooseUs {
+    background: url(../img/footer-burder_bg.jpg)no-repeat;
+    background-position: 100% 60%;
+    background-size: 100% 250%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    &__container {
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__block {
+        max-width: 200px;
+        text-align: center;
+        margin: 40px 30px;
+    }
+    &__number {
+        @include text_style(48px,
+        100%);
+        font-family: 'Oleo Script Swash Caps';
+    }
+    &__text {
+        @include text_style(18px,
+        160%);
+        font-weight: 400;
+        margin-top: 16px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 66px;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            height: 2px;
+            background-color: #E1651F;
+            margin-bottom: -20px;
+        }
+    }
+}
+
+
+/*----------------------------- Footer-----------------------------*/
+
+.footer {
+    background-color: #1C1C1C;
+    padding: 120px 0;
+    &__container {
+        max-width: 1300px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__block {
+        max-width: 383px;
+        min-width: 300px;
+        width: 100%;
+        padding: 16px;
+        margin: 15px 15px;
+    }
+    &__logo {
+        @include text_style(24px,
+        100%);
+        font-family: 'Oleo Script Swash Caps';
+        margin-bottom: 30px;
+    }
+    &__left-logo {
+        font-size: 38px;
+    }
+    &__text {
+        @include text_style(16px,
+        160%);
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 300;
+    }
+    &__time {
+        margin: 14px 0px;
+    }
+    &__input {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 9px 16px;
+        margin-bottom: 14px;
+    }
+    &__button {
+        @include text_style(14px,
+        160%);
+        text-align: center;
+        display: block;
+        color: rgba(255, 255, 255, 0.6);
+        background-color: #E1651F;
+        padding: 9px 0px;
+    }
+}
+
+
+/*----------------------------- copyright-----------------------------*/
+
+.copyright {
+    padding: 30px 0;
+    background-color: #2C2C2C;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__text {
+        @include text_style(16px,
+        160%);
+        margin-right: 30px;
+        max-width: 615px;
+        font-weight: 300;
+        & span {
+            text-decoration: underline;
+        }
+    }
+    &__socialmedia {
+        display: flex;
+        justify-content: space-between;
+        max-width: 175px;
+        width: 100%;
+    }
+    &__socialicon {
+        margin-right: 10px;
+    }
+}
