@@ -9,10 +9,18 @@ $lh) {
 
 /*----------------------------- Контейнер контента и страницы -----------------------------*/
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Poppins;
     font-size: 16px;
     color: #fff;
+}
+
+body._lock {
+    overflow: hidden;
 }
 
 .container {
@@ -49,6 +57,13 @@ body {
     border-radius: 39px;
     font-weight: 400;
     font-family: Poppins;
+    transition: all .3s ease-out 0s;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: rgb(207, 69, 69);
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, .4);
+    }
 }
 
 
@@ -120,15 +135,13 @@ body {
     }
     &__preview {
         min-height: 100vh;
-        flex: 1 1 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         margin: 0 auto;
         max-width: 720px;
-        margin-top: -152px;
-        padding-top: 100px;
+        margin-top: -90px;
     }
     &__title {
         Font-family: 'Oleo Script Swash Caps';
@@ -152,7 +165,10 @@ body {
 /*------------- Меню навигации -------------*/
 
 .menu {
-    &_list {
+    &__icon {
+        display: none;
+    }
+    &__list {
         padding: 58px 0px;
         display: flex;
     }
@@ -178,7 +194,9 @@ body {
             background-color: #E1651F;
             margin-bottom: -10px;
         }
-        &:hover::after {
+        &:hover::after,
+        &:active::after,
+        &:focus::after {
             width: 100%;
         }
     }
@@ -191,15 +209,18 @@ body {
     margin-top: 50px;
     padding: 120px 0;
     display: flex;
-    // flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
     &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 500px;
         max-width: 565px;
         width: 100%;
         & img {
             width: 100%;
-            min-width: 457px;
         }
     }
     &__info {
@@ -234,7 +255,7 @@ body {
 }
 
 
-/*----------------------------- Секция Out Menu -----------------------------*/
+/*----------------------------- Секция Our Menu -----------------------------*/
 
 .shop {
     background: rgba(0, 0, 0, 0.04);
@@ -259,7 +280,46 @@ body {
     }
 }
 
+.hover-card {
+    transform: translate(-110%, 0);
+    transition: all .3s ease 0s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .85);
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__button {
+        color: #fff;
+        font-size: 24px;
+        padding: 30px 30px;
+        border-radius: 4px;
+        transition: all .3s ease-out 0s;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, .8);
+        ;
+        &:hover {
+            text-shadow: 5px 5px 10px rgba(255, 255, 255, .5);
+            color: #fff;
+        }
+    }
+}
+
 .card {
+    transition: all .5s ease 0s;
+    &:hover {
+        box-shadow: 0px 0px 20px #E1651F;
+        .hover-card {
+            transform: translate(0, 0);
+        }
+    }
+    overflow: hidden;
+    position: relative;
     &__stars {
         margin-bottom: 12px;
     }
@@ -303,12 +363,20 @@ body {
         overflow: hidden;
     }
     &__button {
+        display: none;
         @include text_style (12px,
         160%);
         color: #E1651F;
         padding: 4px 10px;
         background-color: rgba(232, 107, 38, 0.08);
         border-radius: 25px;
+        transition: all .4s ease-out 0s;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: rgb(207, 69, 69);
+            color: #fff;
+        }
     }
 }
 
@@ -328,6 +396,7 @@ body {
     }
     &__card {
         max-width: 380px;
+        height: auto;
         width: 100%;
         text-align: center;
         margin: 30px 15px;
@@ -339,9 +408,12 @@ body {
     &__cardname {
         @include text_style (24px,
         100%);
+        word-wrap: break-word;
         color: #000;
+        max-width: 200px;
+        margin: 0 auto;
         font-family: 'Oleo Script Swash Caps';
-        margin: 25px 0px 12px 0px;
+        padding: 25px 0px 12px 0px;
     }
     &__text {
         @include text_style (16px,
@@ -422,6 +494,10 @@ body {
         color: #00000066;
         padding: 13px 24px;
         background-color: rgba(0, 0, 0, 0.04);
+        transition: all .3s ease-out 0s;
+        &:focus {
+            box-shadow: 0px 0px 3px #E1651F;
+        }
     }
     &__center-inputs {
         display: flex;
@@ -441,6 +517,10 @@ body {
         background-color: rgba(0, 0, 0, 0.04);
         resize: none;
         margin-bottom: 44px;
+        transition: all .3s ease-out 0s;
+        &:focus {
+            box-shadow: 0px 0px 3px #E1651F;
+        }
     }
 }
 
@@ -500,11 +580,10 @@ body {
         max-width: 1300px;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
     }
     &__block {
         max-width: 383px;
-        min-width: 300px;
+        min-width: 280px;
         width: 100%;
         padding: 16px;
         margin: 15px 15px;
@@ -533,6 +612,10 @@ body {
         color: rgba(255, 255, 255, 0.7);
         padding: 9px 16px;
         margin-bottom: 14px;
+        transition: all .3s ease-out 0s;
+        &:focus {
+            box-shadow: 0px 0px 3px #E1651F;
+        }
     }
     &__button {
         @include text_style(14px,
@@ -542,6 +625,13 @@ body {
         color: rgba(255, 255, 255, 0.6);
         background-color: #E1651F;
         padding: 9px 0px;
+        transition: all .3s ease-out 0s;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: rgb(207, 69, 69);
+            color: #fff;
+        }
     }
 }
 
@@ -574,5 +664,9 @@ body {
     }
     &__socialicon {
         margin-right: 10px;
+        transition: all .3s ease-out 0s;
+        &:hover {
+            transform: scale(1.3);
+        }
     }
 }

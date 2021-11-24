@@ -1,0 +1,344 @@
+        /*----------------------------- Доработка для маленьких экранов (ноутбуки) -----------------------------*/
+        
+        @media screen and (max-width: 940px) {
+            /*----------------------------- Секция about -----------------------------*/
+            .about {
+                padding: 60px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                &__img {
+                    max-width: 650px;
+                    min-width: 0px;
+                    margin: 0 30px;
+                }
+                &__info {
+                    text-align: center;
+                    margin-left: 0px;
+                    max-width: 800px;
+                }
+                &__title {
+                    margin-top: 50px;
+                    &::after {
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+            /*----------------------------- Секция Our menu-----------------------------*/
+            .shop {
+                padding-bottom: 60px;
+                &__card {
+                    margin: 0px 40px 30px 40px;
+                }
+                &__area {
+                    margin-bottom: 26px;
+                }
+            }
+            /*----------------------------- Секция Listen to our customers-----------------------------*/
+            .customers {
+                background-size: cover;
+                &__area {
+                    flex-wrap: wrap;
+                }
+            }
+            /*----------------------------- Секция Book your table -----------------------------*/
+            .booking {
+                &__form {
+                    padding: 0px 20px;
+                }
+                &__center-inputs {
+                    & input {
+                        max-width: 100%
+                    }
+                }
+            }
+            /*----------------------------- Секция Number of About us -----------------------------*/
+            .whyChooseUs {
+                background-position: center;
+                background-size: cover;
+            }
+            /*----------------------------- Секция Footer -----------------------------*/
+            .footer {
+                padding: 60px 0;
+                &__container {
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                &__block {
+                    flex: 1 1 33.333%;
+                    max-width: none;
+                    min-width: none;
+                    width: auto;
+                }
+            }
+        }
+        /*----------------------------- Планшеты -----------------------------*/
+        
+        @media screen and (max-width: 768px) {
+            /*----------------------------- Секция Header -----------------------------*/
+            .header {
+                &__preview {
+                    margin-top: 0px;
+                }
+                &__navbar._active {
+                    height: 75px;
+                }
+                &__logo img {
+                    margin: 30px 0px 0px 15px;
+                    width: 100%;
+                }
+                &__logo {
+                    z-index: 5;
+                    &._active {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                &__title {
+                    font-size: 74px;
+                }
+            }
+            /*-----------------------------Бургер меню -----------------------------*/
+            .menu {
+                &__list {
+                    display: block;
+                    margin-bottom: 30px;
+                }
+                &__list>li {
+                    text-align: center;
+                    margin-bottom: 35px;
+                    font-size: 30px;
+                }
+                &__link {
+                    &::after {
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                    }
+                    &:hover::after,
+                    &:active::after,
+                    &:focus::after {
+                        width: 30%;
+                    }
+                    font-weight: 400;
+                }
+                &__icon {
+                    z-index: 5;
+                    display: block;
+                    position: fixed;
+                    right: 15px;
+                    top: 30px;
+                    width: 50px;
+                    height: 36px;
+                    cursor: pointer;
+                    &._active span {
+                        width: 0;
+                    }
+                    &._active::before {
+                        top: 50%;
+                        transform: rotate(-50deg) translate(0px, -50%);
+                    }
+                    &._active::after {
+                        width: 100%;
+                        bottom: 50%;
+                        transform: rotate(50deg) translate(0px, 50%);
+                    }
+                    &::before,
+                    &::after,
+                    & span {
+                        position: absolute;
+                        height: 10%;
+                        width: 100%;
+                        transition: all .3s ease 0s;
+                        background-color: rgb(228, 220, 116);
+                    }
+                    &::before,
+                    &::after {
+                        content: "";
+                    }
+                    &::before {
+                        top: 0;
+                    }
+                    &::after {
+                        width: 50%;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    & span {
+                        right: 0;
+                        width: 75%;
+                        top: 50%;
+                        transform: scale(1) translate(0px, -50%);
+                    }
+                }
+                .menu__body {
+                    overflow: auto;
+                    z-index: 1;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, .9);
+                    padding: 100px 30px 30px 30px;
+                    transition: left .3s ease 0s;
+                    left: -100%;
+                    &._active {
+                        left: 0;
+                        &::before {
+                            right: 0;
+                        }
+                    }
+                    &::before {
+                        transition: right .3s ease 0s;
+                        z-index: 2;
+                        content: "";
+                        position: fixed;
+                        width: 100%;
+                        top: 0;
+                        right: -100%;
+                        height: 100px;
+                        background-color: #E1651F;
+                    }
+                }
+            }
+            /*----------------------------- Секция About -----------------------------*/
+            .about {
+                &__img {
+                    margin: 0 0;
+                }
+            }
+            /*----------------------------- Секция Our menu-----------------------------*/
+            .shop {
+                &__card {
+                    margin: 0px 15px 30px 15px;
+                }
+            }
+            /*----------------------------- Секция Why choose us?-----------------------------*/
+            .weAre {
+                padding-bottom: 60px;
+                padding-top: 100px;
+                &__card {
+                    max-width: 450px;
+                }
+            }
+            /*----------------------------- Секция Listen to our customers-----------------------------*/
+            .customers {
+                padding: 100px 0;
+            }
+            /*----------------------------- Секция Book your table -----------------------------*/
+            .booking {
+                padding: 100px 0;
+                &__form {
+                    padding: 0px 10px;
+                }
+            }
+            /*----------------------------- Секция Number of About us -----------------------------*/
+            .whyChooseUs {
+                padding: 100px 0;
+            }
+            /*----------------------------- Секция Footer -----------------------------*/
+            .footer {
+                padding: 30px 0;
+                &__container {
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                &__block {
+                    flex: 1 1 33.333%;
+                    max-width: none;
+                    min-width: none;
+                    width: auto;
+                }
+            }
+            /*----------------------------- Секция copyright -----------------------------*/
+            .copyright {
+                padding: 15px 0;
+                &__container {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                }
+                &__text {
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        /*----------------------------- Средние мобильные устройства -----------------------------*/
+        
+        @media screen and (max-width: 375px) {
+            /*----------------------------- Секция Our menu-----------------------------*/
+            .shop {
+                padding: 80px 0;
+            }
+            /*----------------------------- Секция Why choose us?-----------------------------*/
+            .weAre {
+                padding-bottom: 60px;
+                padding-top: 80px;
+                &__card {
+                    max-width: 450px;
+                }
+            }
+            /*----------------------------- Секция Listen to our customers-----------------------------*/
+            .customers {
+                padding: 80px 0;
+                &__title {
+                    & .title__name {
+                        font-size: 44px;
+                    }
+                    & .title__text {
+                        font-size: 15px;
+                        &::after {
+                            margin-bottom: -20px;
+                        }
+                    }
+                }
+            }
+            /*----------------------------- Секция Book your table -----------------------------*/
+            .booking {
+                padding: 80px 0;
+            }
+            /*----------------------------- Секция Number of About us -----------------------------*/
+            .whyChooseUs {
+                padding: 80px 0;
+                &__text {
+                    margin-top: 5px;
+                    &::after {
+                        margin-bottom: -10px;
+                    }
+                }
+                &__block {
+                    margin: 25px 30px;
+                }
+            }
+            /*----------------------------- Секция Footer -----------------------------*/
+            .footer {
+                padding: 30px 0;
+                &__container {
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                &__block {
+                    flex: 1 1 33.333%;
+                    max-width: none;
+                    min-width: none;
+                    width: auto;
+                    margin: 0;
+                    padding: 16px 10px;
+                }
+            }
+            /*----------------------------- Секция copyright -----------------------------*/
+            .copyright {
+                padding: 15px 0;
+                &__container {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                }
+                &__text {
+                    margin: 0 auto;
+                    margin-bottom: 20px;
+                }
+            }
+        }
