@@ -326,6 +326,7 @@ body._lock {
     &__info {
         padding: 23.5px;
         background-color: #fff;
+        height: 100%;
     }
     &__img {
         & img {
@@ -355,12 +356,6 @@ body._lock {
         160%);
         color: #6A6A6A;
         margin: 10px 0px;
-        text-overflow: ellipsis;
-        max-height: 67px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
     &__button {
         display: none;

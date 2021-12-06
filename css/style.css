@@ -476,6 +476,7 @@ body._lock {
 .card__info {
   padding: 23.5px;
   background-color: #fff;
+  height: 100%;
 }
 
 .card__img img {
@@ -515,12 +516,6 @@ body._lock {
   line-height: 160%;
   color: #6A6A6A;
   margin: 10px 0px;
-  text-overflow: ellipsis;
-  max-height: 67px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .card__button {

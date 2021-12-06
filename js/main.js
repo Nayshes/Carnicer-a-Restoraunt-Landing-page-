@@ -35,7 +35,7 @@ window.addEventListener('mousemove', function(e) {
 
 //Прокрутка при клике 
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+const menuLinks = document.querySelectorAll('.all_link[data-goto]');
 let pageHeight = window.innerHeight;
 if (menuLinks.length > 0) {
     menuLinks.forEach(menuLink => {
