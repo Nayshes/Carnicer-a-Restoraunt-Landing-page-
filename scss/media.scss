@@ -94,6 +94,10 @@
      .header {
          &__preview {
              margin-top: 0px;
+             padding-top: 75px;
+         }
+         &__navbar {
+             position: absolute;
          }
          &__navbar._active {
              height: 75px;

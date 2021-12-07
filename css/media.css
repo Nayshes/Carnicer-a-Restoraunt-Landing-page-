@@ -100,6 +100,10 @@
   /*----------------------------- Секция Header -----------------------------*/
   .header__preview {
     margin-top: 0px;
+    padding-top: 75px;
+  }
+  .header__navbar {
+    position: absolute;
   }
   .header__navbar._active {
     height: 75px;
