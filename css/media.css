@@ -1,4 +1,20 @@
 @charset "UTF-8";
+/*----------------------------- Доработка для анимаций пк -----------------------------*/
+@media screen and (min-width: 768px) {
+  .header__navbar {
+    -webkit-transform: translate(0px, -20px);
+            transform: translate(0px, -20px);
+    opacity: .1;
+    -webkit-transition: all .9s ease-out 0s;
+    transition: all .9s ease-out 0s;
+  }
+  .header__navbar._anim-active {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
 /*----------------------------- Доработка для маленьких экранов (ноутбуки) -----------------------------*/
 @media screen and (max-width: 940px) {
   /*----------------------------- Секция about -----------------------------*/

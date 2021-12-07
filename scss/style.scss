@@ -78,6 +78,11 @@ body._lock {
         90%);
         font-family: 'Oleo Script Swash Caps';
         margin-bottom: 18px;
+        transform: translate(0, -50px);
+        transition: all 1s ease-out 0s;
+        &._anim-active {
+            transform: translate(0, 0);
+        }
     }
     &__text {
         @include text_style (16px,
@@ -90,13 +95,25 @@ body._lock {
         &::after {
             content: '';
             position: absolute;
-            width: 120px;
+            width: 0px;
             left: 50%;
             transform: translate(-50%, 0);
             bottom: 0;
             height: 2px;
             background-color: #E1651F;
             margin-bottom: -25px;
+            transition: all 1s ease-out .7s;
+        }
+        &._anim-active::after {
+            width: 120px;
+        }
+        transform: translate(0,
+        50px);
+        opacity: .1;
+        transition: all 1s ease-out .2s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
         }
     }
 }
@@ -147,6 +164,13 @@ body._lock {
         Font-family: 'Oleo Script Swash Caps';
         font-size: 96px;
         padding: 32px 0;
+        transform: scale(0.5, 1) translate(0px, 50px);
+        opacity: 0;
+        transition: all .7s ease-out 0s;
+        &._anim-active {
+            transform: scale(1, 1) translate(0px, 0px);
+            opacity: 1;
+        }
     }
     &__subtitle {
         @include text_style (18px,
@@ -155,6 +179,13 @@ body._lock {
         margin: 0 auto;
         font-weight: 200;
         margin-bottom: 15px;
+        opacity: .3;
+        transform: translate(0, -50px);
+        transition: all .9s ease-out 0s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
     &__button {
         align-self: center;
@@ -222,10 +253,23 @@ body._lock {
         & img {
             width: 100%;
         }
+        opacity: 0;
+        transform: translate(0px,
+        -100px);
+        transition: all 1s ease-out 0s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
     &__info {
         max-width: 480px;
         margin-left: 30px;
+        transform: translate(100px, 0px);
+        transition: all 1s ease-out 0s;
+        &._anim-active {
+            transform: translate(0, 0);
+        }
     }
     &__title {
         @include text_style (48px,
@@ -237,12 +281,24 @@ body._lock {
         &::after {
             content: '';
             position: absolute;
-            width: 120px;
+            width: 0px;
             bottom: 0;
             left: 0;
             height: 2px;
             background-color: #E1651F;
             margin-bottom: -25px;
+            transition: all 1s ease-out .7s;
+        }
+        &._anim-active::after {
+            width: 120px;
+        }
+        transform: translate(50px,
+        0px);
+        opacity: 0;
+        transition: all 1s ease-out .3s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
         }
     }
     &__text {
@@ -251,6 +307,13 @@ body._lock {
         font-weight: 400;
         color: #6A6A6A;
         margin-bottom: 34px;
+        transform: translate(0, -30px);
+        opacity: .1;
+        transition: all 1s ease-out .7s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
 }
 
@@ -267,6 +330,13 @@ body._lock {
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 86px;
+        transform: translate(0, -50px);
+        opacity: .1;
+        transition: all 1s ease-out .0s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
     &__title {
         padding-bottom: 100px;
@@ -388,6 +458,13 @@ body._lock {
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 50px;
+        transform: translate(0, -50px);
+        opacity: .1;
+        transition: all 1s ease-out .0s;
+        &._anim-active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
     &__card {
         max-width: 380px;
@@ -443,6 +520,23 @@ body._lock {
         min-width: 280px;
         max-width: 380px;
         background-color: #fff;
+        transition: all 1s ease-out 0s;
+        opacity: .1;
+        &:nth-child(1) {
+            transform: translate(-100px, 0);
+        }
+        &:nth-child(2) {
+            transform: translate(0, 100px);
+        }
+        &:nth-child(3) {
+            transform: translate(100px, 0);
+        }
+        &:nth-child(1)._anim-active,
+        &:nth-child(2)._anim-active,
+        &:nth-child(3)._anim-active {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
     }
     &__img {
         margin-bottom: 30px;
@@ -551,16 +645,25 @@ body._lock {
         font-weight: 400;
         margin-top: 16px;
         position: relative;
+        transition: all .8s ease-out 0s;
+        transform: scale(0.5, 1);
+        &._anim-active {
+            transform: scale(1, 1);
+        }
         &::after {
             content: '';
             position: absolute;
-            width: 66px;
+            width: 0px;
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);
             height: 2px;
             background-color: #E1651F;
             margin-bottom: -20px;
+            transition: all 1s ease-out 0s;
+        }
+        &._anim-active::after {
+            width: 66px;
         }
     }
 }

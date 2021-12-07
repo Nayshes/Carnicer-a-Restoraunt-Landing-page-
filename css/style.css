@@ -164,6 +164,15 @@ body._lock {
   line-height: 90%;
   font-family: 'Oleo Script Swash Caps';
   margin-bottom: 18px;
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  -webkit-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+}
+
+.title__name._anim-active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .title__text {
@@ -174,12 +183,17 @@ body._lock {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  -webkit-transform: translate(0, 50px);
+          transform: translate(0, 50px);
+  opacity: .1;
+  -webkit-transition: all 1s ease-out .2s;
+  transition: all 1s ease-out .2s;
 }
 
 .title__text::after {
   content: '';
   position: absolute;
-  width: 120px;
+  width: 0px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
@@ -187,6 +201,18 @@ body._lock {
   height: 2px;
   background-color: #E1651F;
   margin-bottom: -25px;
+  -webkit-transition: all 1s ease-out .7s;
+  transition: all 1s ease-out .7s;
+}
+
+.title__text._anim-active::after {
+  width: 120px;
+}
+
+.title__text._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 /*------- Звёзды --------*/
@@ -250,6 +276,17 @@ body._lock {
   Font-family: 'Oleo Script Swash Caps';
   font-size: 96px;
   padding: 32px 0;
+  -webkit-transform: scale(0.5, 1) translate(0px, 50px);
+          transform: scale(0.5, 1) translate(0px, 50px);
+  opacity: 0;
+  -webkit-transition: all .7s ease-out 0s;
+  transition: all .7s ease-out 0s;
+}
+
+.header__title._anim-active {
+  -webkit-transform: scale(1, 1) translate(0px, 0px);
+          transform: scale(1, 1) translate(0px, 0px);
+  opacity: 1;
 }
 
 .header__subtitle {
@@ -259,6 +296,17 @@ body._lock {
   margin: 0 auto;
   font-weight: 200;
   margin-bottom: 15px;
+  opacity: .3;
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  -webkit-transition: all .9s ease-out 0s;
+  transition: all .9s ease-out 0s;
+}
+
+.header__subtitle._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .header__button {
@@ -340,15 +388,35 @@ body._lock {
   min-width: 500px;
   max-width: 565px;
   width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(0px, -100px);
+          transform: translate(0px, -100px);
+  -webkit-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
 }
 
 .about__img img {
   width: 100%;
 }
 
+.about__img._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
 .about__info {
   max-width: 480px;
   margin-left: 30px;
+  -webkit-transform: translate(100px, 0px);
+          transform: translate(100px, 0px);
+  -webkit-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+}
+
+.about__info._anim-active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .about__title {
@@ -358,17 +426,34 @@ body._lock {
   color: #000;
   position: relative;
   margin-bottom: 52px;
+  -webkit-transform: translate(50px, 0px);
+          transform: translate(50px, 0px);
+  opacity: 0;
+  -webkit-transition: all 1s ease-out .3s;
+  transition: all 1s ease-out .3s;
 }
 
 .about__title::after {
   content: '';
   position: absolute;
-  width: 120px;
+  width: 0px;
   bottom: 0;
   left: 0;
   height: 2px;
   background-color: #E1651F;
   margin-bottom: -25px;
+  -webkit-transition: all 1s ease-out .7s;
+  transition: all 1s ease-out .7s;
+}
+
+.about__title._anim-active::after {
+  width: 120px;
+}
+
+.about__title._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .about__text {
@@ -377,6 +462,17 @@ body._lock {
   font-weight: 400;
   color: #6A6A6A;
   margin-bottom: 34px;
+  -webkit-transform: translate(0, -30px);
+          transform: translate(0, -30px);
+  opacity: .1;
+  -webkit-transition: all 1s ease-out .7s;
+  transition: all 1s ease-out .7s;
+}
+
+.about__text._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 /*----------------------------- Секция Our Menu -----------------------------*/
@@ -397,6 +493,17 @@ body._lock {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 86px;
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  opacity: .1;
+  -webkit-transition: all 1s ease-out .0s;
+  transition: all 1s ease-out .0s;
+}
+
+.shop__area._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .shop__title {
@@ -554,6 +661,17 @@ body._lock {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 50px;
+  -webkit-transform: translate(0, -50px);
+          transform: translate(0, -50px);
+  opacity: .1;
+  -webkit-transition: all 1s ease-out .0s;
+  transition: all 1s ease-out .0s;
+}
+
+.weAre__area._anim-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .weAre__card {
@@ -618,6 +736,30 @@ body._lock {
   min-width: 280px;
   max-width: 380px;
   background-color: #fff;
+  -webkit-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  opacity: .1;
+}
+
+.customers__card:nth-child(1) {
+  -webkit-transform: translate(-100px, 0);
+          transform: translate(-100px, 0);
+}
+
+.customers__card:nth-child(2) {
+  -webkit-transform: translate(0, 100px);
+          transform: translate(0, 100px);
+}
+
+.customers__card:nth-child(3) {
+  -webkit-transform: translate(100px, 0);
+          transform: translate(100px, 0);
+}
+
+.customers__card:nth-child(1)._anim-active, .customers__card:nth-child(2)._anim-active, .customers__card:nth-child(3)._anim-active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  opacity: 1;
 }
 
 .customers__img {
@@ -758,12 +900,21 @@ body._lock {
   font-weight: 400;
   margin-top: 16px;
   position: relative;
+  -webkit-transition: all .8s ease-out 0s;
+  transition: all .8s ease-out 0s;
+  -webkit-transform: scale(0.5, 1);
+          transform: scale(0.5, 1);
+}
+
+.whyChooseUs__text._anim-active {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
 .whyChooseUs__text::after {
   content: '';
   position: absolute;
-  width: 66px;
+  width: 0px;
   bottom: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -771,6 +922,12 @@ body._lock {
   height: 2px;
   background-color: #E1651F;
   margin-bottom: -20px;
+  -webkit-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+}
+
+.whyChooseUs__text._anim-active::after {
+  width: 66px;
 }
 
 /*----------------------------- Footer-----------------------------*/
